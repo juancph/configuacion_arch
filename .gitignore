@@ -1,0 +1,24 @@
+
+# Ignorar TODO
+*
+
+# Permitir carpetas
+!kitty/
+!kitty/**
+
+!waybar/
+!waybar/**
+
+!mako/
+!mako/**
+
+!wofi/
+!wofi/**
+
+!sway/
+!sway/**
+
+!nvim/
+!nvim/**
+
+!.gitignore
