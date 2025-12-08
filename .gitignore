@@ -22,3 +22,5 @@
 !nvim/**
 
 !.gitignore
+
+!paquetes.txt
