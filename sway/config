@@ -150,7 +150,7 @@ exec mako
 output * bg /home/juan/Pictures/fondo.jpeg fill
 
 # Batería
-exec_always while true; do ~/.config/sway/bateria.sh; sleep 60; done
+exec_always sh -c "while true; do ~/.config/sway/bateria.sh; sleep 10; done &"
 
 ########################################
 # AUDIO (PIPEWIRE / PULSEAUDIO)
@@ -161,6 +161,17 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
+
+
+########################################
+# BRILLO 
+########################################
+
+# Subir brillo
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+
+# Bajar brillo
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 ########################################
 # MOUSE
@@ -190,11 +201,21 @@ output * bg /home/juan/Pictures/fondo.jpeg fill
 ########################################
 # ATAJOS PERSONALES (se mantienen aquí para referencia)
 ########################################
+
+# $mod+n -> Abrir Chromium usando almacenamiento de contraseñas básico
 bindsym $mod+n exec chromium --password-store=basic
-bindsym $mod+c exec codium
+
+# $mod+c -> Abrir Codium (editor de código)
+bindsym $mod+c exec code
+
+# $mod+Shift+p -> Apagar el sistema usando systemctl
 bindsym $mod+Shift+p exec systemctl poweroff
-bindsym Print exec flameshot gui
+
+# $mod+p -> Abrir CopyQ (gestor de portapapeles)
 bindsym $mod+p exec copyq
+
+# $mod+d -> Abrir Wofi en modo drun (lanzador de aplicaciones estilo menú)
 bindsym $mod+d exec wofi --show drun
 
-
+# Copiar captura de área al portapapeles
+bindsym Shift+Print exec sh -c 'grim -g "$(slurp)" - | wl-copy'
