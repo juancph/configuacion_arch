@@ -29,6 +29,7 @@ set clipboard=unnamedplus
 " Colores (usa tema predeterminado de terminal)
 set termguicolors
 
-
+" Salir del terminal y volver al modo normal con Esc
+tnoremap <Esc> <C-\><C-n>
 
 
