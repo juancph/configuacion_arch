@@ -1,11 +1,9 @@
-// -*- mode: jsonc -*-
 {
-    "height": 30,
-    "spacing": 4,
+    "spacing": 5,
 
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "pulseaudio","cpu", "memory", "battery", "tray", "clock", "custom/power"],
+    "modules-right": ["network", "pulseaudio", "cpu", "memory", "battery", "tray", "clock", "custom/power"],
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -43,16 +41,14 @@
         "tooltip-format": "{:%Y-%m-%d}"
     },
 
-    "tray": {},
+    "tray": {
+        "spacing": 10
+    },
 
     "custom/power": {
          "format": " ⏻ ",
-         "on-click": "systemctl poweroff"
-     },
-
-     "bluetooth": {
-       "format": ""
+         "on-click": "systemctl poweroff",
+         "tooltip": "poweroff"
      }
         
-    }
 }
