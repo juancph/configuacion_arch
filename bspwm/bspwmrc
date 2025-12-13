@@ -13,3 +13,6 @@ feh --bg-scale ~/Pictures/fondo.jpeg &
 
 ~/.config/lemonbar/bar.sh &
 
+~/.config/bspwm/estado_bateria.sh &
+
+dunst &

@@ -143,3 +143,6 @@ XF86AudioMute
 XF86AudioPlay
     playerctl play-pause
 
+
+Print
+    flameshot gui
