@@ -1,0 +1,15 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
+
+# Fondo de pantalla
+feh --bg-scale ~/Pictures/fondo.jpeg &
+
+
+~/.config/lemonbar/bar.sh &
+

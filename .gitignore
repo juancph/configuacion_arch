@@ -24,3 +24,12 @@
 !.gitignore
 
 !paquetes.txt
+
+!lemonbar/
+!lemonbar/**
+
+!sxhkd/
+!sxhkd/**
+
+!bspwm/
+!bspwm/**
