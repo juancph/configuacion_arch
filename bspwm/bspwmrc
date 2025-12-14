@@ -13,7 +13,7 @@ feh --bg-scale ~/.config/bspwm/fondo.jpeg &
 
 ~/.config/lemonbar/bar.sh &
 
-~/.config/bspwm/estado_bateria.sh &
+~/.config/scripts/estado_bateria.sh &
 
 dpgrep -x diodon > /dev/null || diodon &
 
