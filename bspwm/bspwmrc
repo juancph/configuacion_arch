@@ -8,7 +8,7 @@ bspc config focus_follows_pointer true
 bspc config pointer_follows_focus true
 
 # Fondo de pantalla
-feh --bg-scale ~/.config/bspwm/fondo.jpeg &
+feh --bg-scale ~/.config/fondo.jpeg &
 
 
 ~/.config/lemonbar/bar.sh &

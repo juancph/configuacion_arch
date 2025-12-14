@@ -144,16 +144,10 @@ Print
     flameshot gui
 
 
-super + v
-    diodon --replace &
-
 XF86MonBrightnessUp
     ~/.config/scripts/brillo.sh up
 
 XF86MonBrightnessDown
     ~/.config/scripts/brillo.sh down
 
-
-super + shift + p
-    systemctl poweroff
 
