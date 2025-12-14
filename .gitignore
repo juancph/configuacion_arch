@@ -6,24 +6,10 @@
 !kitty/
 !kitty/**
 
-!waybar/
-!waybar/**
-
-!mako/
-!mako/**
-
-!wofi/
-!wofi/**
-
-!sway/
-!sway/**
-
 !nvim/
 !nvim/**
 
 !.gitignore
-
-!paquetes.txt
 
 !lemonbar/
 !lemonbar/**
