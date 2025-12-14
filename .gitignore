@@ -14,11 +14,8 @@
 !lemonbar/
 !lemonbar/**
 
-!sxhkd/
-!sxhkd/**
-
-!bspwm/
-!bspwm/**
+!i3/
+!i3/**
 
 !scripts/
 !scripts/**
