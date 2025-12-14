@@ -19,3 +19,6 @@
 
 !bspwm/
 !bspwm/**
+
+!scripts/
+!scripts/**

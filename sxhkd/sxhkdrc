@@ -6,10 +6,6 @@
 super + Return
 	kitty
 
-# program launcher
-super + @space
-	dmenu_run
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -19,7 +15,7 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + shift + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
@@ -146,3 +142,18 @@ XF86AudioPlay
 
 Print
     flameshot gui
+
+
+super + v
+    diodon --replace &
+
+XF86MonBrightnessUp
+    ~/.config/scripts/brillo.sh up
+
+XF86MonBrightnessDown
+    ~/.config/scripts/brillo.sh down
+
+
+super + shift + p
+    systemctl poweroff
+

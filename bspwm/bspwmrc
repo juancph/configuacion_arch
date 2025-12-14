@@ -8,11 +8,13 @@ bspc config focus_follows_pointer true
 bspc config pointer_follows_focus true
 
 # Fondo de pantalla
-feh --bg-scale ~/Pictures/fondo.jpeg &
+feh --bg-scale ~/.config/bspwm/fondo.jpeg &
 
 
 ~/.config/lemonbar/bar.sh &
 
 ~/.config/bspwm/estado_bateria.sh &
+
+dpgrep -x diodon > /dev/null || diodon &
 
 dunst &
