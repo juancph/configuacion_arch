@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 
 while true; do
-    mapfile -t desktop < <(bspc query -D --names)
+    readarray -t workspaces < <(i3-msg -t get_workspaces | jq -r '.[].name')
+    workspaceActivo=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
 
-    desktopActivo=$(bspc query -D -d focused --names
-)
+
     hora=$(date +"%H:%M:%S | %d-%m-%Y")
     bateria=$(cat /sys/class/power_supply/BAT0/capacity) 
     bateria_estado=$(cat /sys/class/power_supply/BAT0/status)
     
-    for i in ${!desktop[@]}; do
-        d="${desktop[$i]}"
-        desktop[$i]="%{A:bspc desktop -f $d:}$d%{A}"
 
-        if [[ $d == "$desktopActivo" ]]; then
-            desktop[$i]="%{F#ff0000}$d%{F-}"
+    for i in ${!workspaces[@]}; do
+        elemento="${workspaces[$i]}"
+
+        workspaces[$i]="%{A:i3-msg workspace $elemento:}$elemento%{A}"
+        if [ "$elemento" = $workspaceActivo ]; then
+            workspaces[$i]="%{F#ff0000}$elemento%{F-}"
         fi
     done
 
-    echo "%{l}${desktop[*]} %{c}$hora %{r}$bateria%"
+    echo "%{l}${workspaces[*]} %{c}$hora %{r}$bateria%"
     sleep 1
 done | lemonbar | sh
