@@ -23,7 +23,16 @@ while true; do
     ssid=$(nmcli -t -f ACTIVE,SSID dev wifi | grep sí | cut -d: -f2)
 
 
+    #Memoria ----------------------------------------------------
+    memoria=$(
+        free -m | awk '/Mem:/ {
+            gsub(",", ".");
+            print int(($3*100) / $2)
+        }'
+        )
+
+
     #Salida ----------------------------------------------------
-    echo "%{l}${workspaces[*]} %{c}$hora %{r}($ssid $(nmcli -t -f CONNECTIVITY general)) | $bateria%"
+    echo "%{l}${workspaces[*]} %{c}$hora %{r}($ssid $(nmcli -t -f CONNECTIVITY general)) | $memoria% | $bateria%"
     sleep 1
 done | lemonbar | sh
