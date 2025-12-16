@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 while true; do
+    #Workspace -------------------------------------------------
     readarray -t workspaces < <(i3-msg -t get_workspaces | jq -r '.[].name')
     workspaceActivo=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
-
 
     hora=$(date +"%H:%M:%S | %d-%m-%Y")
     bateria=$(cat /sys/class/power_supply/BAT0/capacity) 
@@ -19,6 +19,11 @@ while true; do
         fi
     done
 
-    echo "%{l}${workspaces[*]} %{c}$hora %{r}$bateria%"
+    #Wifi ------------------------------------------------------
+    ssid=$(nmcli -t -f ACTIVE,SSID dev wifi | grep sí | cut -d: -f2)
+
+
+    #Salida ----------------------------------------------------
+    echo "%{l}${workspaces[*]} %{c}$hora %{r}($ssid $(nmcli -t -f CONNECTIVITY general)) | $bateria%"
     sleep 1
 done | lemonbar | sh
