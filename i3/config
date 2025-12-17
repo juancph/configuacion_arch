@@ -187,6 +187,15 @@ default_border pixel 0
 gaps outer 0
 gaps inner 6
 
+# Centrar los títulos
+title_align center
+
+# class                 border  background  text    indicator  child_border
+client.focused          #000000 #202020     #ffffff #00ff00    #000000
+client.unfocused        #000000 #101010     #888888 #000000    #000000
+client.focused_inactive #000000 #181818     #bbbbbb #000000    #000000
+client.urgent           #ff0000 #ff0000     #ffffff #ff0000    #ff0000
+
 
 # =========================
 # Scripts
@@ -226,7 +235,3 @@ bindsym $mod+Shift+v exec --no-startup-id diodon &
 
 # Ejecutar chromium
 bindsym $mod+n exec --no-startup-id chromium
-
-
-
-
