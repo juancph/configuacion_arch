@@ -57,7 +57,7 @@ while true; do
     
 
     #Salida ----------------------------------------------------
-    echo "%{l}$(workSpaces) %{c}$hora %{r}$ssid | Vol: $volumen | Mem: $memoria% | ${bateria_estado:0:4}: $bateria%"
+    echo "%{l}  $(workSpaces) %{c}$hora %{r}$ssid | Vol: $volumen | Mem: $memoria% | ${bateria_estado:0:4}: $bateria%  "
 
     sleep 1
 done | lemonbar | sh
