@@ -231,6 +231,7 @@ bindsym $mod+Shift+p exec --no-startup-id systemctl poweroff
 bindsym Print exec --no-startup-id flameshot gui
 
 # Ejecutar diodon
+exec --no-startup-id diodon
 bindsym $mod+Shift+v exec --no-startup-id diodon &
 
 # Ejecutar chromium
