@@ -228,7 +228,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/scripts/brillo.sh d
 bindsym $mod+Shift+p exec --no-startup-id systemctl poweroff
 
 # Ejecutar flameshot
-bindsym Print exec --no-startup-id flameshot gui
+bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 
 # Ejecutar diodon
 exec --no-startup-id diodon
