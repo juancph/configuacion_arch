@@ -227,7 +227,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/scripts/brillo.sh d
 # Apagar la pc
 bindsym $mod+Shift+p exec --no-startup-id systemctl poweroff
 
-# Ejecutar flameshot
+# Ejecutar maim
 bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 
 # Ejecutar diodon
@@ -236,3 +236,6 @@ bindsym $mod+Shift+v exec --no-startup-id diodon &
 
 # Ejecutar chromium
 bindsym $mod+n exec --no-startup-id chromium
+
+# Bloquear pantalla con F10
+bindsym F10 exec slock
