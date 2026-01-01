@@ -245,3 +245,6 @@ bindsym F9 exec kitty -e bash -c 'cd ~/.config && bash'
 
 # Abrir arandr con F7
 bindsym F7 exec arandr
+
+# Abrir ollama
+bindcode 133 exec kitty -e ollama run llama3.1
