@@ -239,3 +239,9 @@ bindsym $mod+n exec --no-startup-id chromium
 
 # Bloquear pantalla con F10
 bindsym F10 exec slock
+
+# Abrir .config con F9
+bindsym F9 exec kitty -e bash -c 'cd ~/.config && bash'
+
+# Abrir arandr con F7
+bindsym F7 exec arandr
