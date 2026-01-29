@@ -80,9 +80,20 @@ while true; do
         ssid="%{F#ff0000}$estadoRed%{F-}"
     fi
     
+    #Temperatura ------------------------------------------------------
+    temp=$(sensors | awk '/Package id 0/ {print $4}' | tr -d '+°C')
+    temp=${temp%.*}
+
+    if [ "$temp" -le 70 ]; then
+        temperatura="%{F#00ff00}${temp}°C%{F-}"
+    elif [ "$temp" -le 85 ]; then
+        temperatura="%{F#ffff00}${temp}°C%{F-}"
+    else
+        temperatura="%{F#ff0000}${temp}°C%{F-}"
+    fi
 
     #Salida ----------------------------------------------------
-        echo "%{l}  $(workSpaces) %{c}$hora %{r}$ssid | $icono_volumen $volumen% |  $memoria% | $icono_bateria $bateria%  "
+    echo "%{l}  $(workSpaces) %{c}$hora %{r}$ssid | $icono_volumen $volumen% | $temperatura |  $memoria% | $icono_bateria $bateria%  "
 
     sleep 1
 done | lemonbar \
