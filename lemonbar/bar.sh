@@ -92,8 +92,13 @@ while true; do
         temperatura="%{F#ff0000}${temp}°C%{F-}"
     fi
 
+    #CPU ------------------------------------------------------
+    cpu=$(awk '/^cpu /{u=$2+$4; t=$2+$4+$5; printf "%.0f%%\n", (u*100)/t}' /proc/stat)
+
     #Salida ----------------------------------------------------
-    echo "%{l}  $(workSpaces) %{c}$hora %{r}$ssid | $icono_volumen $volumen% | $temperatura |  $memoria% | $icono_bateria $bateria%  "
+    echo "%{l}  $(workSpaces) %{c}$hora %{r}$ssid | $icono_volumen $volumen% |  $cpu - $temperatura | ▦ $memoria% | $icono_bateria $bateria%  "
+
+
 
     sleep 1
 done | lemonbar \
