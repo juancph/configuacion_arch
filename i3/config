@@ -244,3 +244,9 @@ bindsym F9 exec kitty -e bash -c 'cd ~/.config && bash'
 
 # Abrir arandr con F7
 bindsym F7 exec arandr
+
+# Cambiar temperatural del color de la pantalla
+exec --no-startup-id gammastep -O 4000
+bindsym F5 exec gammastep -x
+bindsym F6 exec gammastep -O 4000
+
